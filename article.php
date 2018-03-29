@@ -1,6 +1,6 @@
 <?php
 
-include_once('includes/connection.php');
+include_once('includes/db.php');
 include_once('includes/article.php');
 
 $article = new Article;
@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
     ?>
     <html>
     	<head>
+        <meta charset="utf-8">
     		<title>CMS Tutorial</title>
     		<link rel="stylesheet" href="assets/style.css" />
     	</head>
@@ -19,11 +20,10 @@ if (isset($_GET['id'])) {
     		<div class="container">
     <a href="index.php" id="logo">CMS TEST Eddy</a>
       <h4>
-        <?php echo $data['article_title']; ?>
+        <?php echo $data['article_title']; ?></h4>
         <small>
-          Créer le <?php echo date('l jS', $data['article_timestamp']); ?>
+          Créer le <?php echo date ('d/m/y \à\ H:m:s'); ?>
         </small>
-      </h4>
 
         <p><?php echo $data['article_content']; ?></p>
 
